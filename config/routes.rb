@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/hackathons", to: "hackathons#index"
   get "/home", to: "home#index"
 
+  get 'oauth/callback', to: 'sessions#oauth_callback'
 end
 
 
