@@ -1,6 +1,6 @@
-class CreateHackathons < ActiveRecord::Migration[7.2]
+class CreateEvents < ActiveRecord::Migration[7.2]
   def change
-    create_table :hackathons do |t|
+    create_table :events do |t|
       t.string :title
       t.text :body
 
