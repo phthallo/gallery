@@ -12,11 +12,15 @@
   display: flex;
   flex-wrap: wrap;">
   <% @events.each do |event| %>
-    <div class = "card" style = "flex: auto; margin: var(--spacing-3); flex-basis: 10em;">
-      <p class = "subtitle">
-        <%= event.title %>
-      </p>
-      <p> <%= event.body %> </p>
+    <div class = "card" style = "
+      flex: auto; 
+      margin: var(--spacing-3); 
+      padding: var(--spacing-3); 
+      flex-basis: 33%;">
+        <p class = "eyebrow" style = "color: var(--primary)">
+          <%= link_to event.title, event %>
+        </p>
+        <p> <%= event.body %> </p>
     </div>
     <% end %>
 </div>

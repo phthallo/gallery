@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "/home", to: "home#index"
 
   get 'oauth/callback', to: 'sessions#oauth_callback'
+
+  resources :events
 end
 
 
