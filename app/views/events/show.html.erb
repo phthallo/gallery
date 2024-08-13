@@ -1,0 +1,8 @@
+<h1><%=@event.title%></h1>
+
+<%= link_to @event.title, @event %>
+<% if @event.images.attached? %>
+  <% @event.images.each do |image| %>
+    <image src="<%=(url_for(image))%>">
+  <% end %>
+<% end %>
