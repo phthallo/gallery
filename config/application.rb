@@ -16,7 +16,7 @@ module Gallery
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
-
+    config.active_storage.variant_processor = :mini_magick
     config.hosts << /[a-z0-9]+\.phthallo\.hackclub\.app/
     # Configuration for the application, engines, and railties goes here.
     #
@@ -27,5 +27,3 @@ module Gallery
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
-
-
