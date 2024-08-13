@@ -2,8 +2,14 @@
 
 one:
   title: MyString
+  website: MyString
+  location: MyString
+  date: 2024-08-13
   body: MyText
 
 two:
   title: MyString
+  website: MyString
+  location: MyString
+  date: 2024-08-13
   body: MyText

@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    #  @event.images.purge
+    # @event.images.purge_later
   end
 
   def new

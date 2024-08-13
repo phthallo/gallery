@@ -1,6 +1,10 @@
-<h1><%=@event.title%></h1>
-
-<%= link_to @event.title, @event %>
+<div style="
+  background: var(--steel);
+  text-align: left;
+  padding: var(--spacing-5);">
+<p class="title" style="color: var(--primary)"><%=@event.title %></h1>
+<p class = "subtitle" style="color: var(--white)"><%=@event.body %></p>
+</div>
 <% if @event.images.attached? %>
 
   <% @event.images.each do |image| %>

@@ -20,6 +20,7 @@
         <p class = "eyebrow" style = "color: var(--primary)">
           <%= link_to event.title, event %>
         </p>
+
         <p> <%= event.body %> </p>
 
         <% if event.images.attached? %>
@@ -28,7 +29,7 @@
           flex-wrap: wrap;">
           <% event.images.each do |image| %>
               <img style = "
-              height: 6em;
+              max-height: 6em;
               width: 6em;
               border-radius: 1px;
               object-fit: cover;
@@ -39,6 +40,18 @@
           <% end %>
           </div>
         <% end %>
+        <hr>
+                <div class = "caption" style="color: var(--secondary); padding-top: 0.5em;">
+          <span>
+          <i class="fa-regular fa-calendar"></i>
+          <%=event.date%>
+          </span>
+
+          <span style = "float: right">
+          <i class="fa-solid fa-location-dot"></i>
+          <%=event.location%>
+        </span>
+        </div>
     </div>
     <% end %>
     </div>
