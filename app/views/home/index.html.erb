@@ -7,14 +7,12 @@
 <p class = "subtitle" style="color: var(--white)">A gallery for hackathon and club photos from all around the world.</p>
 </div>
 
-
-<div class = "container narrow" style = "
-  padding: var(--spacing-3);
+<div class = "container" style = "
+  padding: var(--spacing-2);
   display: flex;
-  flex-grow: 1;
   flex-wrap: wrap;">
   <% @events.each do |event| %>
-    <div class = "card">
+    <div class = "card" style = "flex: auto; margin: var(--spacing-3); flex-basis: 10em;">
       <p class = "subtitle">
         <%= event.title %>
       </p>
