@@ -1,6 +1,6 @@
 require "test_helper"
 
-class HackathonsControllerTest < ActionDispatch::IntegrationTest
+class EventsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

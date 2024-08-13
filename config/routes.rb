@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  get "/hackathons", to: "hackathons#index"
+  get "/events", to: "events#index"
   get "/home", to: "home#index"
 
   get 'oauth/callback', to: 'sessions#oauth_callback'
