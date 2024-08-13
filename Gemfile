@@ -59,3 +59,5 @@ end
 gem "dotenv", "~> 3.1"
 
 gem "httpparty", "~> 0.2.0"
+
+gem "image_processing", "~> 1.13"

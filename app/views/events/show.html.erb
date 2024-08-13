@@ -2,7 +2,8 @@
 
 <%= link_to @event.title, @event %>
 <% if @event.images.attached? %>
+
   <% @event.images.each do |image| %>
-    <image src="<%=(url_for(image))%>">
+      <%= image_tag (image.variant(saver: { quality: 75 })) %> 
   <% end %>
 <% end %>

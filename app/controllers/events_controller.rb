@@ -5,6 +5,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    #  @event.images.purge
   end
 
   def new
@@ -13,7 +14,6 @@ class EventsController < ApplicationController
 
   def create
     @Event = Event.new(title: "...", body: "...")
-
     if @Event.save
       redirect_to @Event
     else

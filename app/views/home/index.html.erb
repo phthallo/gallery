@@ -22,9 +22,26 @@
         </p>
         <p> <%= event.body %> </p>
 
+        <% if event.images.attached? %>
+        <div style = "
+          display: flex;
+          flex-wrap: wrap;">
+          <% event.images.each do |image| %>
+              <img style = "
+              height: 6em;
+              width: 6em;
+              border-radius: 1px;
+              object-fit: cover;
+              flex: auto;
+              flex-basis: 25%;
+              margin: var(--spacing-1);"
+              src="<%=(url_for(image.variant(saver: { quality: 75 })))%>">
+          <% end %>
+          </div>
+        <% end %>
     </div>
     <% end %>
-</div>
+    </div>
 
 
 <div class = "container narrow" style = "padding: var(--spacing-3)">
