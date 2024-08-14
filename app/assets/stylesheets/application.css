@@ -369,6 +369,10 @@
     margin: auto;
     padding-left: var(--spacing-3);
     padding-right: var(--spacing-3);
+    > div {
+      flex: 1;
+      min-width: 300px;
+    }
   }
   
   h1 {
@@ -522,8 +526,7 @@
     vertical-align: top;
     border-bottom-width: 1px;
   }
-  
-  
+
   @media screen and (min-width: 32em) {
     .ultratitle {
       font-size: var(--font-5);
@@ -599,3 +602,4 @@
       max-width: var(--size-narrow-plus);
     }
   }
+
