@@ -4,10 +4,14 @@
   padding: var(--spacing-5);">
 <p class="title" style="color: var(--primary)"><%=@event.title %></h1>
 <p class = "subtitle" style="color: var(--white)"><%=@event.body %></p>
+<p class = "subtitle" style="color: var(--white)"><%=@event.website %></p>
+
 </div>
 <% if @event.images.attached? %>
-
+<ul class = "gallery-container">
   <% @event.images.each do |image| %>
-      <%= image_tag (image.variant(saver: { quality: 75 })) %> 
+                <li class = "image-container">
+                <img loading="lazy" class = "gallery-image" 
+                src="<%=(url_for(image.variant(:preview)))%>"></li>
   <% end %>
 <% end %>

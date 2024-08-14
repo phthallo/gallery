@@ -1,0 +1,21 @@
+.gallery-container {
+    display: flex;
+    flex: flex-wrap;
+    padding: 0.5em;
+    margin: 0;
+    list-style-type: none 
+}
+
+.image-container {
+    height: 40vh;
+    flex-grow: 1;
+}
+.gallery-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    :last-child {
+        flex-grow: 10;
+    }
+}

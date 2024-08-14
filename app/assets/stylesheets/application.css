@@ -375,6 +375,30 @@
     }
   }
   
+.preview-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.centred {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+}
+.preview-image {
+  max-height: 6em;
+  width: 6em;
+  border-radius: 1px;
+  object-fit: cover;
+  flex: auto;
+  flex-basis: 25%;
+  color: var(--white);
+  margin: var(--spacing-1);
+}
+
+
   h1 {
     font-size: var(--font-5);
     font-weight: var(--font-weight-bold);

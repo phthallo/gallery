@@ -23,30 +23,19 @@
         <p> <%= event.body %> </p>
 
         <% if event.images.attached? %>
-        <div style = "
-          display: flex;
-          flex-wrap: wrap;">
+        <div class = "preview-gallery">
           <% event.images.first(2).each do |image| %>
-              <img style = "
-              max-height: 6em;
-              width: 6em;
-              border-radius: 1px;
-              object-fit: cover;
-              flex: auto;
-              flex-basis: 25%;
-              margin: var(--spacing-1);"
-              src="<%=(url_for(image.variant(saver: { quality: 75 })))%>">
+              <img loading="lazy" class = "preview-image"
+              src="<%=(url_for(image.variant(:preview)))%>">
           <% end %>
-          <% last_image = event.images[2] %>
-              <img style = "
-              max-height: 6em;
-              width: 6em;
-              border-radius: 1px;
-              object-fit: cover;
-              flex: auto;
-              flex-basis: 25%;
-              margin: var(--spacing-1);"
-              src="<%=(url_for(last_image.variant(saver: { quality: 75 })))%>">
+          <div style = "position: relative">
+            <% last_image = event.images[2]%>
+                <img loading="lazy" class = "preview-image" style = "filter: brightness(30%);"
+                src="<%=(url_for(last_image.variant(:preview)))%>"></img>
+                <% if event.images.length() > 2 %>
+                  <div class="centred caption">+<%= event.images.length() -3 %></div>
+                <% end %>
+            </div>
           </div>
         <% end %>
         <hr>
