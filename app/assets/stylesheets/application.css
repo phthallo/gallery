@@ -388,12 +388,10 @@
   color: var(--white);
 }
 .preview-image {
-  max-height: 6em;
-  width: 6em;
+  height: 6em;
   border-radius: 1px;
   object-fit: cover;
-  flex: auto;
-  flex-basis: 25%;
+  flex-grow: 1;
   color: var(--white);
   margin: var(--spacing-1);
 }

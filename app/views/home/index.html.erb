@@ -28,9 +28,9 @@
               <img loading="lazy" class = "preview-image"
               src="<%=(url_for(image.variant(:preview)))%>">
           <% end %>
-          <div style = "position: relative">
+          <div style = "position: relative; display: flex; flex-wrap: wrap; width: 100%">
             <% last_image = event.images[2]%>
-                <img loading="lazy" class = "preview-image" style = "filter: brightness(30%);"
+                <img loading="lazy" class = "preview-image" style = "filter: brightness(30%); flex-grow: 1;"
                 src="<%=(url_for(last_image.variant(:preview)))%>"></img>
                 <% if event.images.length() > 2 %>
                   <div class="centred caption">+<%= event.images.length() -3 %></div>
