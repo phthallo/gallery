@@ -1,17 +1,20 @@
-<div style="
-  background: var(--steel);
-  text-align: left;
-  padding: var(--spacing-5);">
-<p class="title" style="color: var(--primary)"><%=@event.title %></h1>
-<p class = "subtitle" style="color: var(--white)"><%=@event.body %></p>
-<p class = "subtitle" style="color: var(--white)"><%=@event.website %></p>
+<% random_image = @event.images[Random.rand(@event.images.length()-1)]%>
+<div class = "gallery-header" style="
+        background-image: url(<%=(url_for(random_image.variant(:preview)))%>);">
+    <div style = "filter: brightness(1.42)">
+      <p class="title u-non-blurred" style="color: var(--primary)"><%=@event.title %></h1>
+      <p class = "subtitle u-non-blurred" style="color: var(--white)"><%=@event.body %></p>
+      <p class = "subtitle u-non-blurred" style="color: var(--white)"><%=@event.website %></p>
+    </div>
 
-</div>
+    </div>
+
+
 <% if @event.images.attached? %>
 <ul class = "gallery-container">
   <% @event.images.each do |image| %>
-                <li class = "image-container">
-                <img loading="lazy" class = "gallery-image" 
-                src="<%=(url_for(image.variant(:preview)))%>"></li>
+  <li class = "image-container">
+    <img loading="lazy" class = "gallery-image" src="<%=(url_for(image.variant(:preview)))%>"></li>
   <% end %>
+  <li class = "image-container"></li>
 <% end %>
