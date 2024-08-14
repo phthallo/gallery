@@ -1,17 +1,22 @@
-<% random_image = @event.images[Random.rand(@event.images.length()-1)]%>
+<% random_image = "" %>
+<% if @event.images.length() > 1 %>
+  <% random_image = @event.images[Random.rand(@event.images.length()-1)]%>
+  <% random_image = (url_for(random_image.variant(:preview))) %>
+<% end %>
 <header class = "gallery-header" style="
-        background-image: linear-gradient(90deg, rgba(2,0,0,0.73) 0%, rgba(2,0,0,0.66) 100%), url(<%=(url_for(random_image.variant(:preview)))%>);">
+        background-image: linear-gradient(90deg, rgba(2,0,0,0.73) 0%, rgba(2,0,0,0.66) 100%), url(<%=random_image%>);">
     <div>
+      <nav>
+        <a href = "/"><i class="fa-solid fa-arrow-left"></i> All events</a>
+        </nav>
       <p class="title u-non-blurred" style="color: var(--primary)"><%=@event.title %></h1>
-      <p class = "subtitle u-non-blurred" style="color: var(--white)"><%=@event.body %></p>
+      <p class = "lead u-non-blurred" style="color: var(--white)"><%=@event.body %></p>
       <div style = "color: var(--accent); padding-top: 0.5em">
         <i class="fa-solid fa-globe fa-fw"></i> <a style = "color: var(--accent)" href = "<%=@event.website %>"><%=@event.website %></a><br>
         <i class="fa-regular fa-calendar fa-fw"></i> <%=@event.date%><br>
         <i class="fa-solid fa-location-dot fa-fw"></i> <%=@event.location%>
     </div>
-
-    </div>
-
+</div>
 </header>
 
 <% if @event.images.attached? %>

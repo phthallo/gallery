@@ -146,6 +146,8 @@
   
   .subtitle {
     margin-top: var(--spacing-3);
+    margin-left: var(--spacing-3);
+    margin-right: var(--spacing-3);
     font-weight: var(--font-weight-body);
     line-height: var(--line-height-subheading);
     letter-spacing: var(--letter-spacing-headline);
@@ -549,6 +551,13 @@
     border-bottom-width: 1px;
   }
 
+  @media screen and (max-width: 32em) {
+    .gallery-header, .text-content {
+      padding: var(--spacing-4);
+    }
+
+  }
+
   @media screen and (min-width: 32em) {
     .ultratitle {
       font-size: var(--font-5);
@@ -579,6 +588,9 @@
     .container.narrow {
       max-width: var(--size-narrow);
     }
+    .gallery-header, .text-content {
+      padding: var(--spacing-4);
+    }
   }
   
   @media screen and (min-width: 48em) {
@@ -602,6 +614,9 @@
     .card {
       padding: var(--spacing-4);
     }
+    .gallery-header, .text-content {
+      padding: var(--spacing-4);
+    }
   }
   
   @media screen and (min-width: 64em) {
@@ -622,6 +637,9 @@
     }
     .container.narrow {
       max-width: var(--size-narrow-plus);
+    }
+    .gallery-header, .text-content {
+      padding: var(--spacing-5);
     }
   }
 

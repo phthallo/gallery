@@ -1,11 +1,13 @@
+nav {
+  padding-top: var(--spacing-1);
+}
+
 .gallery-header {
     min-height: 200px;
     position: relative;
     text-align: left;
-    padding: var(--spacing-5);
     background-attachment: fixed;
     overflow: auto;
-
   }
 
 

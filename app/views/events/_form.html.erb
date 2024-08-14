@@ -1,6 +1,7 @@
 <%= form_with model: event do |form| %>
-    <%= form.label "Upload a photo" %>
+    <%= form.label "Upload a photo" %><br>
     <%= form.file_field :images, multiple: true %>
+    
     <%= form.submit %>
     <% @event.images.each do |image| %>
         <%= form.hidden_field :images, multiple: true, value: image.signed_id %>
