@@ -34,7 +34,7 @@ You'll need the following installed:
 
 A version of this website is currently running at [https://gallery.phthallo.hackclub.app](https://gallery.phthallo.hackclub.app), using Hack Club's [Nest](https://guides.rubyonrails.org/getting_started.html) hosting. It uses [Systemd](https://guides.hackclub.app/index.php/Systemd) to stay online.
 
-The `ExecStart=` parameter references [`gallery_start.sh`](/gallerystart.sh) Edit it to fit your setup - make sure to run `nest get_port` to check for free ports! Fill out the rest of the file as directed.
+The `ExecStart=` parameter references [`gallery_start.sh`](/gallery_start.sh) Edit it to fit your setup - make sure to run `nest get_port` to check for free ports! Fill out the rest of the file as directed.
 
 After running `nest subdomain add <subdomain>` (if applicable), edit the contents of your Caddyfile. The parts relevant to this project are below:
 ```
