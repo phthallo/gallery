@@ -19,6 +19,6 @@ jobs:
           script: |
             cd ${{ secrets.DIRECTORY }}            
             git pull
-            systemctl -- user daemon reload
+            systemctl --user daemon reload
             systemctl --user enable ${{ secrets.SERVICE }}
             systemctl --user start ${{ secrets.SERVICE}}
