@@ -15,13 +15,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-        run: |
+        script: |
           cd ${{ secrets.DIRECTORY }}            
           git pull
-        env: 
-          service: ${{ secrets.SERVICE }}
-        if: ${{ env.service }}
-        script: |
           systemctl -- user daemon reload
           systemctl --user enable $ {{ secrets.SERVICE }}
           systemctl --user start $ {{ sercets.SERVICE}}
