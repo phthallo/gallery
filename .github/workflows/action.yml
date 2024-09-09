@@ -15,9 +15,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-        script: |
-          cd ${{ secrets.DIRECTORY }}            
-          git pull
-          systemctl -- user daemon reload
-          systemctl --user enable $ {{ secrets.SERVICE }}
-          systemctl --user start $ {{ sercets.SERVICE}}
+
+          script: |
+            cd ${{ secrets.DIRECTORY }}            
+            git pull
+            systemctl -- user daemon reload
+            systemctl --user enable $ {{ secrets.SERVICE }}
+            systemctl --user start $ {{ sercets.SERVICE}}
