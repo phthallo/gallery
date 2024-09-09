@@ -6,6 +6,7 @@ jobs:
   nest-deploy:
     name: Nest Deploy
     runs-on: ubuntu-latest
+    environment: deploy
     steps: 
       - name: Connect via SSH
         uses: appleboy/ssh-action@v1.0.3
