@@ -9,7 +9,7 @@ jobs:
     environment: deploy
     steps: 
       - name: Deployment
-        uses: phthallo/nest-deploy@v1.0.2
+        uses: phthallo/nest-deploy@v1.0.3
         with: 
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
