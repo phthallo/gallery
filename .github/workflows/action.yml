@@ -1,0 +1,31 @@
+name: 'nest-deploy'
+description: Automatically deploy your GitHub repository to the Nest server.
+author: phthallo
+
+on: 
+  push
+
+jobs: 
+  nest-deploy:
+    name: Nest Deploy
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Connect via SSH
+        uses: appleboy/ssh-action@latest
+        with: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+
+      - name: Pull latest changes
+        run: |
+          cd ${{ secrets.DIRECTORY }}            
+          git pull
+
+      - name: Restart service
+        if: ${{ secrets.SERVICE }}
+        run: |
+          systemctl -- user daemon reload
+          systemctl --user enable $ {{ secrets.SERVICE }}
+          systemctl --user start $ {{ sercets.SERVICE}}
