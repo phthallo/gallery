@@ -1,7 +1,4 @@
 name: 'nest-deploy'
-description: Automatically deploy your GitHub repository to the Nest server.
-author: phthallo
-
 on: 
   push
 
