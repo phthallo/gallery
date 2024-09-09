@@ -21,7 +21,9 @@ jobs:
           git pull
 
       - name: Restart service
-        if: ${{ secrets.SERVICE }}
+        env: 
+          service: ${{ secrets.SERVICE }}
+        if: ${{ env.service }}
         run: |
           systemctl -- user daemon reload
           systemctl --user enable $ {{ secrets.SERVICE }}
