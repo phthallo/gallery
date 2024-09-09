@@ -1,4 +1,9 @@
-name: 'nest-deploy'
+name: Nest Deploy
+description: GitHub Action for deploying to the Nest hosting service.
+branding: 
+  icon: 'chevron-right'
+  color: 'blue'
+
 on: 
   push
 
