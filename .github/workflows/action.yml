@@ -21,7 +21,7 @@ jobs:
         env: 
           service: ${{ secrets.SERVICE }}
         if: ${{ env.service }}
-        run: |
+        script: |
           systemctl -- user daemon reload
           systemctl --user enable $ {{ secrets.SERVICE }}
           systemctl --user start $ {{ sercets.SERVICE}}
