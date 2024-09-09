@@ -15,13 +15,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-
-      - name: Pull latest changes
         run: |
           cd ${{ secrets.DIRECTORY }}            
           git pull
-
-      - name: Restart service
         env: 
           service: ${{ secrets.SERVICE }}
         if: ${{ env.service }}
