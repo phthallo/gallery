@@ -36,7 +36,7 @@ A version of this website is currently running at [https://gallery.phthallo.hack
 
 The `ExecStart=` parameter references [`gallery_start.sh`](/gallery_start.sh) Edit it to fit your setup - make sure to run `nest get_port` to check for free ports! Fill out the rest of the file as directed.
 
-After running `nest subdomain add <subdomain>` (if applicable), edit the contents of your Caddyfile. The parts relevant to this project are below:
+After running `nest caddy add <name>.<username>.hackclub.app` (if applicable), edit the contents of your Caddyfile. The parts relevant to this project are below:
 ```
 http://<subdomain.<username>.hackclub.app {
   bind unix/.webserver.sock|777
